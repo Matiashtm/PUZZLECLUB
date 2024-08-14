@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs Aleatorios</title>
+    <style>
+          body {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start; /* Corregido */
+              margin-top: 20px;
+              margin-left: 10px;
+          }
+        #contenedorJuego{
+            margin-top:0px;
+            margin-left:0px;
+            position: absolute;
+            width: 300px;
+            height: 500px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px 2px white;
+            font-size:25px;
+            justify-content: center;
+        }
+        .principal {
+            display: grid;
+            grid-template-columns: repeat(3,50px);
+            grid-gap: 10px;
+        }
+        .principal1 {
+            display: grid;
+            grid-template-columns: repeat(3,25px);
+            grid-gap: 10px;
+        }
+        
+          #principal1 {
+              margin-top: 13%;
+              margin-left: 40%; /* Corregido */
+              position: absolute;
+          }
+        #div10 {
+            margin-top: 130%;
+            margin-left:50%;
+            position: absolute;
+        }
+        #principal2 {
+            margin-top:70%;
+            margin-left:30%;
+            position: absolute;
+        }
+
+        .box1 {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            background-color: white;
+        }
+        .box2 {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            background-color: white;
+        }
+        #boton_verificar {
+            margin-top: 155%;
+            margin-left: 25%;
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px 2px white;
+            font-size:25px;
+            justify-content: center;
+        }
+        #info {
+            margin-top: 52%;
+            margin-left: 5%;
+            position: absolute;
+            width: 270px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            border: 2px solid;
+            border-color: white;
+            font-size:20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .paralelogramo {
+            width: 175px; /* Ancho del paralelogramo */
+            height: 40px; /* Alto del paralelogramo */
+            background-color: #3498db; /* Color de fondo */
+            transform: rotate(90deg) skew(30deg); /* Rotación y inclinación */
+            transform-origin: top left; /* Ajustar el punto de origen para una rotación más precisa */
+            margin-top: 70%;
+            margin-left: 25%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedorJuego">
+    <div class="principal1" id="principal1">
+        <div class="box1" id="div1"></div>
+        <div class="box1" id="div2"></div>
+        <div class="box1" id="div3"></div>
+        <div class="box1" id="div4"></div>
+        <div class="box1" id="div5"></div>
+        <div class="box1" id="div6"></div>
+        <div class="box1" id="div7"></div>
+        <div class="box1" id="div8"></div>
+        <div class="box1" id="div9"></div>
+    </div>
+        <div id="info"></div>
+        <div class="box2" id="div10" onclick="Juego(10)"></div>
+    <div class="principal" id="principal2">
+        <div class="box2" id="div11" onclick="Juego(11)"></div>
+        <div class="box2" id="div12" onclick="Juego(12)"></div>
+        <div class="box2" id="div13" onclick="Juego(13)"></div>
+        <div class="box2" id="div14" onclick="Juego(14)"></div>
+        <div class="box2" id="div15" onclick="Juego(15)"></div>
+        <div class="box2" id="div16" onclick="Juego(16)"></div>
+        <div class="box2" id="div17" onclick="Juego(17)"></div>
+        <div class="box2" id="div18" onclick="Juego(18)"></div>
+        <div class="box2" id="div19" onclick="Juego(19)"></div>
+    </div>
+    <div class="paralelogramo"></div>
+     </div>
+
+    <script>
+
+    function Primercuadro(){
+
+    d1 = Math.floor(Math.random() * 9) + 2; 
+      
+      do {
+          d2 = Math.floor(Math.random() * 9) + 2; 
+      } while (d2 == d1);
+
+      do {
+          d3 = Math.floor(Math.random() * 9) + 2; 
+      } while (d3 == d1 || d3 == d2);
+
+      do {
+          d4 = Math.floor(Math.random() * 9) + 2; 
+      } while (d4 == d1 || d4 == d2 || d4 == d3);
+
+      do {
+          d5 = Math.floor(Math.random() * 9) + 2; 
+      } while (d5 == d1 || d5 == d2 || d5 == d3 || d5 == d4);
+      
+      do {
+      d6 = Math.floor(Math.random() * 9) + 2; 
+      } while (d6 == d1 || d6 == d2 || d6 == d3 || d6 == d4 || d6 == d5);
+      
+      do {
+      d7 = Math.floor(Math.random() * 9) + 2; 
+      } while (d7 == d1 || d7 == d2 || d7 == d3 || d7 == d4 || d7 == d5 || d7 == d6);
+      
+      do {
+      d8 = Math.floor(Math.random() * 9) + 2; 
+      } while (d8 == d1 || d8 == d2 || d8 == d3 || d8 == d4 || d8 == d5 || d8 == d6 
+      || d8 == d7);
+      
+      do {
+      d9 = Math.floor(Math.random() * 9) + 2; 
+      } while (d9 == d1 || d9 == d2 || d9 == d3 || d9 == d4 || d9 == d5 || d9 == d6 
+      || d9 == d7 || d9 == d8);
+      
+      const elem = document.getElementById("div1");
+      
+    switch (d1){
+            case 10: div1.style.backgroundColor= "white" ; break;
+            case 2: div1.style.backgroundColor= "yellow" ; break;
+            case 3: div1.style.backgroundColor= "green" ; break;
+            case 4: div1.style.backgroundColor= "red" ; break;
+            case 5: div1.style.backgroundColor= "orange" ; break;
+            case 6: div1.style.backgroundColor= "pink" ; break;
+            case 7: div1.style.backgroundColor= "blue" ; break;
+            case 8: div1.style.backgroundColor= "lightblue" ; break;
+            case 9: div1.style.backgroundColor= "violet" ; break;
+
+
+      }
+        switch (d2){
+            case 10: div2.style.backgroundColor= "white" ; break;
+            case 2: div2.style.backgroundColor= "yellow" ; break;
+            case 3: div2.style.backgroundColor= "green" ; break;
+            case 4: div2.style.backgroundColor= "red" ; break;
+            case 5: div2.style.backgroundColor= "orange" ; break;
+            case 6: div2.style.backgroundColor= "pink" ; break;
+            case 7: div2.style.backgroundColor= "blue" ; break;
+            case 8: div2.style.backgroundColor= "lightblue" ; break;
+            case 9: div2.style.backgroundColor= "violet" ; break;
+
+      }
+        switch (d3){
+            case 10: div3.style.backgroundColor= "white" ; break;
+            case 2: div3.style.backgroundColor= "yellow" ; break;
+            case 3: div3.style.backgroundColor= "green" ; break;
+            case 4: div3.style.backgroundColor= "red" ; break;
+            case 5: div3.style.backgroundColor= "orange" ; break;
+            case 6: div3.style.backgroundColor= "pink" ; break;
+            case 7: div3.style.backgroundColor= "blue" ; break;
+            case 8: div3.style.backgroundColor= "lightblue" ; break;
+            case 9: div3.style.backgroundColor= "violet" ; break;
+
+      }
+          switch (d4){
+            case 10: div4.style.backgroundColor= "white" ; break;
+            case 2: div4.style.backgroundColor= "yellow" ; break;
+            case 3: div4.style.backgroundColor= "green" ; break;
+            case 4: div4.style.backgroundColor= "red" ; break;
+            case 5: div4.style.backgroundColor= "orange" ; break;
+            case 6: div4.style.backgroundColor= "pink" ; break;
+            case 7: div4.style.backgroundColor= "blue" ; break;
+            case 8: div4.style.backgroundColor= "lightblue" ; break;
+            case 9: div4.style.backgroundColor= "violet" ; break;
+
+      }
+    switch (d5){
+            case 10: div5.style.backgroundColor= "white" ; break;
+            case 2: div5.style.backgroundColor= "yellow" ; break;
+            case 3: div5.style.backgroundColor= "green" ; break;
+            case 4: div5.style.backgroundColor= "red" ; break;
+            case 5: div5.style.backgroundColor= "orange" ; break;
+            case 6: div5.style.backgroundColor= "pink" ; break;
+            case 7: div5.style.backgroundColor= "blue" ; break;
+            case 8: div5.style.backgroundColor= "lightblue" ; break;
+            case 9: div5.style.backgroundColor= "violet" ; break;
+
+      }
+    switch (d6){
+            case 10: div6.style.backgroundColor= "white" ; break;
+            case 2: div6.style.backgroundColor= "yellow" ; break;
+            case 3: div6.style.backgroundColor= "green" ; break;
+            case 4: div6.style.backgroundColor= "red" ; break;
+            case 5: div6.style.backgroundColor= "orange" ; break;
+            case 6: div6.style.backgroundColor= "pink" ; break;
+            case 7: div6.style.backgroundColor= "blue" ; break;
+            case 8: div6.style.backgroundColor= "lightblue" ; break;
+            case 9: div6.style.backgroundColor= "violet" ; break;
+
+      }
+    switch (d7){
+            case 10: div7.style.backgroundColor= "white" ; break;
+            case 2: div7.style.backgroundColor= "yellow" ; break;
+            case 3: div7.style.backgroundColor= "green" ; break;
+            case 4: div7.style.backgroundColor= "red" ; break;
+            case 5: div7.style.backgroundColor= "orange" ; break;
+            case 6: div7.style.backgroundColor= "pink" ; break;
+            case 7: div7.style.backgroundColor= "blue" ; break;
+            case 8: div7.style.backgroundColor= "lightblue" ; break;
+            case 9: div7.style.backgroundColor= "violet" ; break;
+
+      }
+    switch (d8){
+            case 10: div8.style.backgroundColor= "white" ; break;
+            case 2: div8.style.backgroundColor= "yellow" ; break;
+            case 3: div8.style.backgroundColor= "green" ; break;
+            case 4: div8.style.backgroundColor= "red" ; break;
+            case 5: div8.style.backgroundColor= "orange" ; break;
+            case 6: div8.style.backgroundColor= "pink" ; break;
+            case 7: div8.style.backgroundColor= "blue" ; break;
+            case 8: div8.style.backgroundColor= "lightblue" ; break;
+            case 9: div8.style.backgroundColor= "violet" ; break;
+
+      }
+    switch (d9){
+            case 10: div9.style.backgroundColor= "white" ; break;
+            case 2: div9.style.backgroundColor= "yellow" ; break;
+            case 3: div9.style.backgroundColor= "green" ; break;
+            case 4: div9.style.backgroundColor= "red" ; break;
+            case 5: div9.style.backgroundColor= "orange" ; break;
+            case 6: div9.style.backgroundColor= "pink" ; break;
+            case 7: div9.style.backgroundColor= "blue" ; break;
+            case 8: div9.style.backgroundColor= "lightblue" ; break;
+            case 9: div9.style.backgroundColor= "violet" ; break;
+
+      }
+
+    }
+    function Segundocuadro(){
+    d10 = 10;
+    d11 = Math.floor(Math.random() * 9) + 1; 
+      
+      do {
+          d12 = Math.floor(Math.random() * 9) + 1; 
+      } while (d12 == d11);
+
+      do {
+          d13 = Math.floor(Math.random() * 9) + 1; 
+      } while (d13 == d11 || d13 == d12);
+
+      do {
+          d14 = Math.floor(Math.random() * 9) + 1; 
+      } while (d14 == d11 || d14 == d12 || d14 == d13);
+
+      do {
+          d15 = Math.floor(Math.random() * 9) + 1; 
+      } while (d15 == d11 || d15 == d12 || d15 == d13 || d15 == d14);
+      
+      do {
+      d16 = Math.floor(Math.random() * 9) + 1; 
+      } while (d16 == d11 || d16 == d12 || d16 == d13 || d16 == d14 || d16 == d15);
+      
+      do {
+      d17 = Math.floor(Math.random() * 9) + 1; 
+      } while (d17 == d11 || d17 == d12 || d17 == d13 || d17 == d14 || d17 == d15 ||
+      d17 == d16);
+      
+      do {
+      d18 = Math.floor(Math.random() * 9) + 1; 
+      } while (d18 == d11 || d18 == d12 || d18 == d13 || d18 == d14 || d18 == d15 
+      || d18 == d16 
+      || d18 == d17);
+      
+      do {
+      d19 = Math.floor(Math.random() * 9) + 1; 
+      } while (d19 == d11 || d19 == d12 || d19 == d13 || d19 == d14 || d19 == d15 
+      || d19 == d16 
+      || d19 == d17 || d19 == d18);
+      
+      AsignarColor();
+      }
+    function Juego(select){
+        var selectDom =select;
+        switch (selectDom){
+          case 10:
+              var cassete = d10;
+              d10=d18;
+              d18=cassete; break;
+          case 11:
+             if(d12==1){ d12=d11; d11=1;   };
+             if(d14==1){ d14=d11; d11=1;   }; break;
+          case 12:
+             if(d11==1){ d11=d12; d12=1;   };
+             if(d13==1){ d13=d12; d12=1;   }; 
+             if(d15==1){ d15=d12; d12=1;   }; break;
+          case 13:
+             if(d12==1){ d12=d13; d13=1;   };
+             if(d16==1){ d16=d13; d13=1;   }; break;
+          case 14:
+             if(d11==1){ d11=d14; d14=1;   };
+             if(d15==1){ d15=d14; d14=1;   }; 
+             if(d17==1){ d17=d14; d14=1;   }; break;
+          case 15:
+             if(d12==1){ d12=d15; d15=1;   };
+             if(d14==1){ d14=d15; d15=1;   }; 
+             if(d16==1){ d16=d15; d15=1;   }; 
+             if(d18==1){ d18=d15; d15=1;   }; break;
+          case 16:
+             if(d13==1){ d13=d16; d16=1;   };
+             if(d15==1){ d15=d16; d16=1;   }; 
+             if(d19==1){ d19=d16; d16=1;   }; break;
+          case 17:
+             if(d14==1){ d14=d17; d17=1;   }; 
+             if(d18==1){ d18=d17; d17=1;   }; break;
+          case 18:
+             if(d15==1){ d15=d18; d18=1;   };
+             if(d17==1){ d17=d18; d18=1;   }; 
+             if(d19==1){ d19=d18; d18=1;   }; break;
+          case 19:
+             if(d16==1){ d16=d19; d19=1;   };
+             if(d18==1){ d18=d19; d19=1;   }; break;
+        }
+        
+        AsignarColor();
+  
+    }
+    function AsignarColor(){
+      
+    switch (d10){
+            case 1: div10.style.backgroundColor= "transparent" ; break;
+            case 2: div10.style.backgroundColor= "yellow" ; break;
+            case 3: div10.style.backgroundColor= "green" ; break;
+            case 4: div10.style.backgroundColor= "red" ; break;
+            case 5: div10.style.backgroundColor= "orange" ; break;
+            case 6: div10.style.backgroundColor= "pink" ; break;
+            case 7: div10.style.backgroundColor= "blue" ; break;
+            case 8: div10.style.backgroundColor= "lightblue" ; break;
+            case 9: div10.style.backgroundColor= "violet" ; break;
+            case 10: div10.style.backgroundColor= "white" ; break;
+
+      }
+    switch (d11){
+            case 1: div11.style.backgroundColor= "transparent" ; break;
+            case 2: div11.style.backgroundColor= "yellow" ; break;
+            case 3: div11.style.backgroundColor= "green" ; break;
+            case 4: div11.style.backgroundColor= "red" ; break;
+            case 5: div11.style.backgroundColor= "orange" ; break;
+            case 6: div11.style.backgroundColor= "pink" ; break;
+            case 7: div11.style.backgroundColor= "blue" ; break;
+            case 8: div11.style.backgroundColor= "lightblue" ; break;
+            case 9: div11.style.backgroundColor= "violet" ; break;
+            case 10: div11.style.backgroundColor= "white" ; break;
+
+      }
+        switch (d12){
+            case 1: div12.style.backgroundColor= "transparent" ; break;
+            case 2: div12.style.backgroundColor= "yellow" ; break;
+            case 3: div12.style.backgroundColor= "green" ; break;
+            case 4: div12.style.backgroundColor= "red" ; break;
+            case 5: div12.style.backgroundColor= "orange" ; break;
+            case 6: div12.style.backgroundColor= "pink" ; break;
+            case 7: div12.style.backgroundColor= "blue" ; break;
+            case 8: div12.style.backgroundColor= "lightblue" ; break;
+            case 9: div12.style.backgroundColor= "violet" ; break;
+            case 10: div12.style.backgroundColor= "white" ; break;
+
+      }
+        switch (d13){
+            case 1: div13.style.backgroundColor= "transparent" ; break;
+            case 2: div13.style.backgroundColor= "yellow" ; break;
+            case 3: div13.style.backgroundColor= "green" ; break;
+            case 4: div13.style.backgroundColor= "red" ; break;
+            case 5: div13.style.backgroundColor= "orange" ; break;
+            case 6: div13.style.backgroundColor= "pink" ; break;
+            case 7: div13.style.backgroundColor= "blue" ; break;
+            case 8: div13.style.backgroundColor= "lightblue" ; break;
+            case 9: div13.style.backgroundColor= "violet" ; break;
+            case 10: div13.style.backgroundColor= "white" ; break;
+
+      }
+          switch (d14){
+            case 1: div14.style.backgroundColor= "transparent" ; break;
+            case 2: div14.style.backgroundColor= "yellow" ; break;
+            case 3: div14.style.backgroundColor= "green" ; break;
+            case 4: div14.style.backgroundColor= "red" ; break;
+            case 5: div14.style.backgroundColor= "orange" ; break;
+            case 6: div14.style.backgroundColor= "pink" ; break;
+            case 7: div14.style.backgroundColor= "blue" ; break;
+            case 8: div14.style.backgroundColor= "lightblue" ; break;
+            case 9: div14.style.backgroundColor= "violet" ; break;
+            case 10: div14.style.backgroundColor= "white" ; break;
+
+      }
+    switch (d15){
+            case 1: div15.style.backgroundColor= "transparent" ; break;
+            case 2: div15.style.backgroundColor= "yellow" ; break;
+            case 3: div15.style.backgroundColor= "green" ; break;
+            case 4: div15.style.backgroundColor= "red" ; break;
+            case 5: div15.style.backgroundColor= "orange" ; break;
+            case 6: div15.style.backgroundColor= "pink" ; break;
+            case 7: div15.style.backgroundColor= "blue" ; break;
+            case 8: div15.style.backgroundColor= "lightblue" ; break;
+            case 9: div15.style.backgroundColor= "violet" ; break;
+            case 10: div15.style.backgroundColor= "white" ; break;
+
+      }
+    switch (d16){
+            case 1: div16.style.backgroundColor= "transparent" ; break;
+            case 2: div16.style.backgroundColor= "yellow" ; break;
+            case 3: div16.style.backgroundColor= "green" ; break;
+            case 4: div16.style.backgroundColor= "red" ; break;
+            case 5: div16.style.backgroundColor= "orange" ; break;
+            case 6: div16.style.backgroundColor= "pink" ; break;
+            case 7: div16.style.backgroundColor= "blue" ; break;
+            case 8: div16.style.backgroundColor= "lightblue" ; break;
+            case 9: div16.style.backgroundColor= "violet" ; break;
+            case 10: div16.style.backgroundColor= "white" ; break;
+
+      }
+    switch (d17){
+            case 1: div17.style.backgroundColor= "transparent" ; break;
+            case 2: div17.style.backgroundColor= "yellow" ; break;
+            case 3: div17.style.backgroundColor= "green" ; break;
+            case 4: div17.style.backgroundColor= "red" ; break;
+            case 5: div17.style.backgroundColor= "orange" ; break;
+            case 6: div17.style.backgroundColor= "pink" ; break;
+            case 7: div17.style.backgroundColor= "blue" ; break;
+            case 8: div17.style.backgroundColor= "lightblue" ; break;
+            case 9: div17.style.backgroundColor= "violet" ; break;
+            case 10: div17.style.backgroundColor= "white" ; break;
+
+      }
+    switch (d18){
+            case 1: div18.style.backgroundColor= "transparent" ; break;
+            case 2: div18.style.backgroundColor= "yellow" ; break;
+            case 3: div18.style.backgroundColor= "green" ; break;
+            case 4: div18.style.backgroundColor= "red" ; break;
+            case 5: div18.style.backgroundColor= "orange" ; break;
+            case 6: div18.style.backgroundColor= "pink" ; break;
+            case 7: div18.style.backgroundColor= "blue" ; break;
+            case 8: div18.style.backgroundColor= "lightblue" ; break;
+            case 9: div18.style.backgroundColor= "violet" ; break;
+            case 10: div18.style.backgroundColor= "white" ; break;
+
+      }
+    switch (d19){
+            case 1: div19.style.backgroundColor= "transparent" ; break;
+            case 2: div19.style.backgroundColor= "yellow" ; break;
+            case 3: div19.style.backgroundColor= "green" ; break;
+            case 4: div19.style.backgroundColor= "red" ; break;
+            case 5: div19.style.backgroundColor= "orange" ; break;
+            case 6: div19.style.backgroundColor= "pink" ; break;
+            case 7: div19.style.backgroundColor= "blue" ; break;
+            case 8: div19.style.backgroundColor= "lightblue" ; break;
+            case 9: div19.style.backgroundColor= "violet" ; break;
+            case 10: div19.style.backgroundColor= "white" ; break;
+
+    }
+    
+      Verificar();
+      
+    }
+
+
+      function Verificar() {
+        llaves=0;
+          if (d1 === d11 ) {llaves++;} else {}
+          if (d2 === d12 ) {llaves++;} else {}
+          if (d3 === d13 ) {llaves++;} else {}
+          if (d4 === d14 ) {llaves++;} else {}
+          if (d5 === d15 ) {llaves++;} else {}
+          if (d6 === d16 ) {llaves++;} else {}
+          if (d7 === d17 ) {llaves++;} else {}
+          if (d8 === d18 ) {llaves++;} else {}
+          if (d9 === d19 ) {llaves++;} else {}
+          if(llaves<9){
+            document.getElementById('info').style.color = "white"; 
+            document.getElementById('info').textContent = "COLORES CORRECTOS: " + llaves;
+          }
+          if(llaves==9){
+            document.getElementById('info').style.color = "green"; 
+            document.getElementById('info').textContent = "¡LO HAS COMPLETADO!";
+          }
+        
+      }
+
+
+    
+    Primercuadro();
+    Segundocuadro();
+    
+    </script>
+</body>
+</html>
